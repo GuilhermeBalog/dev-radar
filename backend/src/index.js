@@ -1,5 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
+
 const { atlas } = require('./credentials')
 const routes = require('./routes')
 
@@ -10,6 +12,7 @@ mongoose.connect(`mongodb+srv://${atlas.username}:${atlas.password}@cluster0-dm8
     useUnifiedTopology: true
 })
 
+app.use(cors())
 app.use(express.json())
 app.use(routes)
 
