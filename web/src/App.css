@@ -16,7 +16,7 @@
     #app{
         flex-direction: column;
     }
-    
+
     #app aside, #app main{
         width: 100%;
     }

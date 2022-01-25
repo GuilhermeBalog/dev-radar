@@ -8,7 +8,7 @@ import './Main.css'
 import DevItem from './components/DevItem';
 import DevForm from './components/DevForm';
 
-// Componente: Função que retorna bloco isolado de html, css e javascript) 
+// Componente: Função que retorna bloco isolado de html, css e javascript)
     // Usamos quando estamos repetindo muito código OU
     // Quando é possível isolar uma parte da aplicação que não afeta outras partes
 
