@@ -1,10 +1,11 @@
+require('dotenv').config()
+
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const http = require('http')
 
 const { setupWebsocket } = require('./websocket')
-const { atlas } = require('./credentials')
 const routes = require('./routes')
 
 const app = express()
@@ -12,7 +13,7 @@ const server = http.Server(app)
 
 setupWebsocket(server)
 
-mongoose.connect(`mongodb+srv://${atlas.username}:${atlas.password}@cluster0-dm80i.mongodb.net/${atlas.database}?retryWrites=true&w=majority`, {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
